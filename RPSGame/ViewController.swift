@@ -86,8 +86,30 @@ class ViewController: UIViewController {
         
         // 3) 내가 선택한 것을 이미지 뷰에 표시
         // 4) 내가 선택한 것을 레이블에 표시
+        switch myChoice {
+        case .rock:
+            myimageView.image = #imageLiteral(resourceName: "rock")
+            myChoiceLabel.text = "바위"
+        case .paper:
+            myimageView.image = #imageLiteral(resourceName: "paper")
+            myChoiceLabel.text = "보"
+        case .scissors:
+            myimageView.image = #imageLiteral(resourceName: "scissors")
+            myChoiceLabel.text = "가위"
+        }
         
         // 5) 컴퓨터가 선택한 것과 내가 선택한 것을 비교해서 이겼는지/졌는지 판단/표시
+        if comChoice == myChoice {
+            mainLabel.text = "비겼다"
+        } else if comChoice == .rock && myChoice == .paper {
+            mainLabel.text = "이겼다"
+        } else if comChoice == .paper && myChoice == .scissors {
+            mainLabel.text = "이겼다"
+        } else if comChoice == .scissors && myChoice == .rock {
+            mainLabel.text = "이겼다"
+        } else {
+            mainLabel.text = "졌다"
+        }
         
     }
     
