@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     // 변수 / 속성
     @IBOutlet weak var mainLabel: UILabel!
     
-    @IBOutlet weak var comImageView: UIImageView!
-    @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var comimageView: UIImageView!
+    @IBOutlet weak var myimageView: UIImageView!
     
     @IBOutlet weak var comChoiceLabel: UILabel!
     @IBOutlet weak var myChoiceLabel: UILabel!
@@ -25,11 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 1) 첫번째/두번째 이미지 뷰에 준비 (묵) 이미지를 띄워야 함.
-        comImageView.image = #imageLiteral(resourceName: "ready")
-        myImageView.image = UIImage(named: "ready.png")
+        comimageView.image = #imageLiteral(resourceName: "ready")
+        myimageView.image = #imageLiteral(resourceName: "ready")
         // 2) 첫번째/두번째 레이블에 "준비"라고 문자열을 띄워야 함
         comChoiceLabel.text = "준비"
         myChoiceLabel.text = "준비"
+        
 
         
 
@@ -63,6 +64,7 @@ class ViewController: UIViewController {
         
         // 6) 컴퓨터가 다시 랜덤 가위/바위/보를 선택하고 저장
     }
+    
     
     
     
