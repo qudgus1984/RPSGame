@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     // 앱의 화면에 들어오면 처음 실행되는 함수
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // 1) 첫번째/두번째 이미지 뷰에 준비 (묵) 이미지를 띄워야 함.
         comimageView.image = #imageLiteral(resourceName: "ready")
         myimageView.image = #imageLiteral(resourceName: "ready")
@@ -36,22 +37,15 @@ class ViewController: UIViewController {
         // 2) 첫번째/두번째 레이블에 "준비"라고 문자열을 띄워야 함
         comChoiceLabel.text = "준비"
         myChoiceLabel.text = "준비"
-        
-
-        
-
-
     }
 
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
         // 가위/바위/보(enum)를 선택해서 그 정보를 저장해야함.
-//        guard let title = sender.currentTitle else {
-//            return
-//        }
+        guard let title = sender.currentTitle else { return }
         // 버튼의 문자를 가져옴
-        let title = sender.currentTitle!
-        // 가위를 누르면 "가위", 바위를 누르면 "바위", 보를 누르면 "보"
+        // let title = sender.currentTitle!
         
+        // 가위를 누르면 "가위", 바위를 누르면 "바위", 보를 누르면 "보"
         switch title {
         case "가위":
             myChoice = Rps.scissors
