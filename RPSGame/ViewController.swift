@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         // 1) 첫번째/두번째 이미지 뷰에 준비 (묵) 이미지를 띄워야 함.
         comimageView.image = #imageLiteral(resourceName: "ready")
         myimageView.image = #imageLiteral(resourceName: "ready")
+        
         // 2) 첫번째/두번째 레이블에 "준비"라고 문자열을 띄워야 함
         comChoiceLabel.text = "준비"
         myChoiceLabel.text = "준비"
@@ -38,7 +39,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
-        // 가위/바위/보를 선택해서 그 정보를 저장해야함.
+        // 가위/바위/보(enum)를 선택해서 그 정보를 저장해야함.
+//        guard let title = sender.currentTitle else {
+//            return
+//        }
+        // 버튼의 문자를 가져옴
+        let title = sender.currentTitle!
+        // 가위를 누르면 "가위", 바위를 누르면 "바위", 보를 누르면 "보"
+        
+        switch title {
+        case "가위":
+            // 가위 열거형을 만들어서 저장
+            print("가위")
+        case "바위":
+            // 바위 열거형을 만들어서 저장
+            print("바위")
+        case "보":
+            // 보 열거형을 만들어서 저장
+            print("보")
+        default:
+            break
+        }
         
     }
     
