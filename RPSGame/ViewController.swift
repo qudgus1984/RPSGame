@@ -116,13 +116,19 @@ class ViewController: UIViewController {
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         // 1) 컴퓨터가 다시 준비 이미지뷰에 표시
         // 2) 컴퓨터가 다시 준비 레이블에 표시
+        comimageView.image = #imageLiteral(resourceName: "ready")
+        comChoiceLabel.text = "준비"
         
         // 3) 내 선택 이미지뷰에도 준비 이미지 뷰에 표시
         // 4) 내 선택 레이블에도 준비 문자열 표시
+        myimageView.image = #imageLiteral(resourceName: "ready")
+        myChoiceLabel.text = "준비"
         
         // 5) 메인 레이블 "선택하세요" 표시
+        mainLabel.text = "선택하세요"
         
         // 6) 컴퓨터가 다시 랜덤 가위/바위/보를 선택하고 저장
+        comChoice = Rps(rawValue: Int.random(in: 0...2))!
     }
     
     
