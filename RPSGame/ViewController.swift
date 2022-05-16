@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var comChoiceLabel: UILabel!
     @IBOutlet weak var myChoiceLabel: UILabel!
     
+    var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
+    
+    var myChoice: Rps = Rps.rock
+    
+    
     
     
     // 함수 / 메서드
@@ -49,14 +54,14 @@ class ViewController: UIViewController {
         
         switch title {
         case "가위":
+            myChoice = Rps.scissors
             // 가위 열거형을 만들어서 저장
-            print("가위")
         case "바위":
+            myChoice = Rps.rock
             // 바위 열거형을 만들어서 저장
-            print("바위")
         case "보":
+            myChoice = Rps.paper
             // 보 열거형을 만들어서 저장
-            print("보")
         default:
             break
         }
@@ -66,6 +71,18 @@ class ViewController: UIViewController {
     @IBAction func selectButtonTapped(_ sender: UIButton) {
         // 1) 컴퓨터가 랜덤 선택한 것을 이미지뷰에 표시
         // 2) 컴퓨터가 랜덤 선택한 것을 레이블에 표시
+        switch comChoice {
+        case Rps.rock:
+            comimageView.image = #imageLiteral(resourceName: "rock")
+            comChoiceLabel.text = "바위"
+        case Rps.scissors:
+            comimageView.image = #imageLiteral(resourceName: "scissors")
+            comChoiceLabel.text = "가위"
+        case Rps.paper:
+            comimageView.image = #imageLiteral(resourceName: "paper")
+            comChoiceLabel.text = "보"
+        }
+
         
         // 3) 내가 선택한 것을 이미지 뷰에 표시
         // 4) 내가 선택한 것을 레이블에 표시
